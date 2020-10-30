@@ -1,13 +1,14 @@
 const express = require('express')
-const mongoose = require('mongoose')   
+const mongoose = require('mongoose')
+const requireDir = require('require-dir')  
 
 const app = express()
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose.connect('mongodb://localhost:27017/nodeapi', options )
 
-app.get('/', (req, res) => {
-    res.send('Hello bla')
-})
+requireDir('./src/models')
+
+app.use('/api', require('./src/routes'))
 
 app.listen(3001)
