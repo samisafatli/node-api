@@ -20,12 +20,12 @@ module.exports = {
     },
 
     async update(req, res){
-        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true, useFindAndModify: false})
         return res.json(product)
     },
 
     async delete(req, res){
-        await Product.findByIdAndDelete(req.params.id)
+        await Product.findByIdAndDelete(req.params.id, { useFindAndModify: false })
         return res.send()
     }
 }
