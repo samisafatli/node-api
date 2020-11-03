@@ -9,13 +9,13 @@ const defaultDate = {
     type: Date, default: Date.now
 }
 
-const ProductSchema = new mongoose.Schema({
-    title: requiredString,
+const BrawlerSchema = new mongoose.Schema({
+    name: requiredString,
     description: requiredString,
-    url: requiredString,
+    type: requiredString,
     createdAt: defaultDate,
 })
 
-ProductSchema.plugin(mongoosePaginate)
+BrawlerSchema.plugin(mongoosePaginate)
 
-mongoose.model('Product', ProductSchema)
+mongoose.model('Brawler', BrawlerSchema)

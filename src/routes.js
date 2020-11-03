@@ -2,12 +2,12 @@ const express = require('express')
 
 const routes = express.Router()
 
-const ProductController = require('./controllers/ProductController')
+const BrawlerController = require('./controllers/BrawlerController')
 
-routes.get('/products', ProductController.index)
-routes.get('/products/:id', ProductController.showByID)
-routes.post('/products', ProductController.store)
-routes.put('/products/:id', ProductController.update)
-routes.delete('/products/:id', ProductController.delete)
+routes.get('/brawlers', BrawlerController.index)
+routes.get('/brawlers/:id', BrawlerController.showByID)
+routes.post('/brawlers', BrawlerController.store)
+routes.put('/brawlers/:id', BrawlerController.update)
+routes.delete('/brawlers/:id', BrawlerController.delete)
 
 module.exports = routes
