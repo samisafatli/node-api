@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Brawler = mongoose.model('Brawler')
 
 module.exports = {
-    async index(req, res){
+    async show(req, res){
         const { page = 1 } = req.query
         const brawlers = await Brawler.paginate({},{page, limit:10})
         return res.json(brawlers)
