@@ -18,4 +18,4 @@ requireDir('./src/models')
 
 app.use('/api', require('./src/routes/routes'))
 
-app.listen(PORT)
+app.listen(process.env.PORT || PORT)
