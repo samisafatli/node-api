@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const requireDir = require('require-dir')  
+const requireDir = require('require-dir')
+require('dotenv').config()
+
 
 const app = express()
 const PORT = 3001
@@ -10,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.connect('mongodb://localhost:27017/nodeapi', options )
+mongoose.connect(process.env.MONGO_URL, options )
 
 requireDir('./src/models')
 
