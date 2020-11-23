@@ -4,6 +4,10 @@ const routes = express.Router()
 
 const BrawlerController = require('../controllers/BrawlerController')
 
+routes.get('/', (res, req) => {
+    res.send('Working')
+})
+
 routes.get('/brawlers', BrawlerController.show)
 routes.get('/brawlers/:id', BrawlerController.showByID)
 
