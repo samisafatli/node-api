@@ -10,7 +10,6 @@ const defaultDate = {
 }
 
 const BrawlerSchema = new mongoose.Schema({
-    key: {required: true, type: Number, unique: true},
     image: requiredString,
     name: requiredString,
     description: requiredString,
