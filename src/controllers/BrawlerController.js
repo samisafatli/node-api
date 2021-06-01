@@ -5,7 +5,7 @@ const Brawler = mongoose.model('Brawler')
 module.exports = {
     async show(req, res){
         const { page = 1 } = req.query
-        const brawlers = await Brawler.paginate({},{page, limit:10})
+        const brawlers = await Brawler.paginate({},{page, limit:15})
         return res.json(brawlers)
     },
 
