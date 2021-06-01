@@ -37,4 +37,4 @@ Down below there is a list of the most important files and their functionalities
     - Creates Brawler Schema using Mongoose and Paginate.
 
 * `src/routes/routes.js`: 
-    - Creates the http methods using the functions from the Controller
+    - Creates the http methods using the functions from the Controller.
